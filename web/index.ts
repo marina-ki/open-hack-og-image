@@ -1,4 +1,4 @@
-import { ParsedRequest, Theme, FileType } from '../api/_lib/types';
+import { ParsedRequest, Theme } from '../api/_lib/types';
 const { H, R, copee } = (window as any);
 let timeout = -1;
 
@@ -117,23 +117,6 @@ const themeOptions: DropdownOption[] = [
     { text: 'Dark', value: 'dark' },
 ];
 
-const fileTypeOptions: DropdownOption[] = [
-    { text: 'PNG', value: 'png' },
-    { text: 'JPEG', value: 'jpeg' },
-];
-
-const fontSizeOptions: DropdownOption[] = Array
-    .from({ length: 10 })
-    .map((_, i) => i * 10)
-    .filter(n => n > 0)
-    .map(n => ({ text: n + 'px', value: n + 'px' }));
-
-const markdownOptions: DropdownOption[] = [
-    { text: 'Plain Text', value: '0' },
-    { text: 'Markdown', value: '1' },
-];
-
-
 
 interface AppState extends ParsedRequest {
     loading: boolean;
@@ -141,7 +124,6 @@ interface AppState extends ParsedRequest {
     messageToast: string;
     selectedImageIndex: number;
     overrideUrl: URL | null;
-    tag: string;
 }
 
 type SetState = (state: Partial<AppState>) => void;

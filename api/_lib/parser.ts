@@ -13,6 +13,9 @@ export function parseRequest(req: IncomingMessage) {
   if (Array.isArray(theme)) {
     throw new Error('Expected a single theme')
   }
+  if (Array.isArray(tag)) {
+    throw new Error('Expected a single tag')
+  }
 
   const arr = (pathname || '/').slice(1).split('.')
   const apiVersion = 'apiv2/'
@@ -30,7 +33,7 @@ export function parseRequest(req: IncomingMessage) {
   const parsedRequest: ParsedRequest = {
     fileType: extension === 'jpeg' ? extension : 'png',
     title: getArray(title),
-    tag: getArray(tag),
+    tag: decodeURIComponent(tag),
     text: decodeURIComponent(text),
     theme: theme === 'dark' ? 'dark' : 'light',
     md: md === '1' || md === 'true',
