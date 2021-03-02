@@ -133,9 +133,11 @@ export function getHtml(parsedReq: ParsedRequest) {
       <div>
         <div class="container">
           <div class="wrapper">
-            <div class="heading title">${emojify(sanitizeHtml(text))}</div>
+            <div>
+              <div class="heading title">${emojify(sanitizeHtml(text))}</div>
 
-            <div class="heading tag">${emojify(sanitizeHtml(tag))}</div>
+              <div class="heading tag">${emojify(sanitizeHtml(tag))}</div>
+            </div>
           </div>
           <img
             class="icon"
