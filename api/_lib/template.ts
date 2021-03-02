@@ -62,11 +62,12 @@ function getCss(theme: string, titleFontSize: number, tagFontSize: number) {
       display: flex;
     }
     .wrapper {
-      display: flex;
-      flex-direction: column;
       margin: 24px 40px;
       height: 452px;
       width: 720px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .icon {
       border-radius: 50%;
