@@ -141,6 +141,7 @@ interface AppState extends ParsedRequest {
     messageToast: string;
     selectedImageIndex: number;
     overrideUrl: URL | null;
+    tag: string;
 }
 
 type SetState = (state: Partial<AppState>) => void;
@@ -159,21 +160,18 @@ const App = (_: any, state: AppState, setState: SetState) => {
     };
     const {
         fileType = 'png',
-        fontSize = '60px',
         theme = 'light',
-        md = true,
         text = '**Hello** World',
+        tag = '#React',
         showToast = false,
         messageToast = '',
         loading = true,
         overrideUrl = null,
     } = state;
-    const mdValue = md ? '1' : '0';
     const url = new URL(window.location.origin);
     url.pathname = `${encodeURIComponent(text)}.${fileType}`;
     url.searchParams.append('theme', theme);
-    url.searchParams.append('md', mdValue);
-    url.searchParams.append('fontSize', fontSize);
+    url.searchParams.append('tag', encodeURIComponent(tag));
 
     return H('div',
         { className: 'split' },
@@ -191,36 +189,22 @@ const App = (_: any, state: AppState, setState: SetState) => {
                     })
                 }),
                 H(Field, {
-                    label: 'File Type',
-                    input: H(Dropdown, {
-                        options: fileTypeOptions,
-                        value: fileType,
-                        onchange: (val: FileType) => setLoadingState({ fileType: val })
-                    })
-                }),
-                H(Field, {
-                    label: 'Font Size',
-                    input: H(Dropdown, {
-                        options: fontSizeOptions,
-                        value: fontSize,
-                        onchange: (val: string) => setLoadingState({ fontSize: val })
-                    })
-                }),
-                H(Field, {
-                    label: 'Text Type',
-                    input: H(Dropdown, {
-                        options: markdownOptions,
-                        value: mdValue,
-                        onchange: (val: string) => setLoadingState({ md: val === '1' })
-                    })
-                }),
-                H(Field, {
-                    label: 'Text Input',
+                    label: 'Title',
                     input: H(TextInput, {
                         value: text,
                         oninput: (val: string) => {
                             console.log('oninput ' + val);
                             setLoadingState({ text: val, overrideUrl: url });
+                        }
+                    })
+                }),
+                H(Field, {
+                    label: 'Tag',
+                    input: H(TextInput, {
+                        value: tag,
+                        oninput: (val: string) => {
+                            console.log('oninput ' + val);
+                            setLoadingState({ tag: val, overrideUrl: url });
                         }
                     })
                 }),

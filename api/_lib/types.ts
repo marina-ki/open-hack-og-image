@@ -5,7 +5,7 @@ export interface ParsedRequest {
   fileType: FileType
   text: string
   title: string[]
-  tag: string[]
+  tag: string
   theme: Theme
   md: boolean
   fontSize: string

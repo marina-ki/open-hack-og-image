@@ -93,14 +93,12 @@ function getCss(theme: string, titleFontSize: number, tagFontSize: number) {
 
 export function getHtml(parsedReq: ParsedRequest) {
   const {
-    title,
+    text,
     tag,
   } = parsedReq
 
-
-
   const theme = "light"
-  const titleLength = title[0].length
+  const titleLength = text[0].length
   const tagLength = tag[0].length
   const wrapperWidth = 500
   const wrapperHeight = 800
@@ -133,7 +131,7 @@ export function getHtml(parsedReq: ParsedRequest) {
       <div>
         <div class="container">
           <div class="wrapper">
-            <div class="heading title">${emojify(sanitizeHtml(title[0]))}</div>
+            <div class="heading title">${emojify(sanitizeHtml(text[0]))}</div>
 
             <div class="heading tag">${emojify(sanitizeHtml(tag[0]))}</div>
           </div>
