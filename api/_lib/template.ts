@@ -54,8 +54,8 @@ function getCss(theme: string, titleFontSize: number, tagFontSize: number) {
       margin-right: 66px;
       margin-left: 66px;
       font-weight: bold;
-      width:810px;
-      height: 510px;
+      width:800px;
+      height: 500px;
       position: relative;
       align-items: center;
       justify-content: center;
@@ -64,8 +64,9 @@ function getCss(theme: string, titleFontSize: number, tagFontSize: number) {
     .wrapper {
       display: flex;
       flex-direction: column;
-      height: 500px;
-      width: 800px;
+      margin: 24px 40px;
+      height: 452px;
+      width: 720px;
     }
     .icon {
       border-radius: 50%;
@@ -79,6 +80,7 @@ function getCss(theme: string, titleFontSize: number, tagFontSize: number) {
         font-weight: 400;
         color: ${foreground};
         line-height: 1.3;
+        text-align: center;
     }
     .title {
       font-weight: 700;
