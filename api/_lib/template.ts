@@ -7,25 +7,20 @@ const twOptions = { folder: 'svg', ext: '.svg' }
 const emojify = (text: string) => twemoji.parse(text, twOptions)
 
 function getCss(theme: string, titleFontSize: number, tagFontSize: number) {
-  let background = 'white'
-  let foreground = 'white'
+  let backgroundImage = 'linear-gradient(315deg, #f9c5d1 0%, #9795ef 74%)'
   if (theme === 'dark') {
-    background = 'black'
-    foreground = 'white'
+    backgroundImage = 'linear-gradient(315deg, #9CCFEB 0%, #9795ef 74%)'
+    
   }
   return `
     @import url('https://fonts.googleapis.com/css?family=M+PLUS+1p');
 
     body {
-        background: ${background};
         height: 100vh;
         display: flex;
-        // text-align: center;
         align-items: center;
         justify-content: center;
-        // padding: 12px;
-        // margin-bottom: 10px;
-        background-image: linear-gradient(315deg, #f9c5d1 0%, #9795ef 74%);
+        background-image: ${backgroundImage};
     }
     code {
         color: #D400FF;
@@ -79,7 +74,7 @@ function getCss(theme: string, titleFontSize: number, tagFontSize: number) {
         font-family: 'M PLUS 1p', 'Inter', sans-serif;
         font-style: normal;
         font-weight: 400;
-        color: ${foreground};
+        color: white;
         line-height: 1.3;
         text-align: center;
         word-break: break-all;
