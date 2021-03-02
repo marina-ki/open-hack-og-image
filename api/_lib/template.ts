@@ -102,8 +102,8 @@ export function getHtml(parsedReq: ParsedRequest) {
   const theme = "light"
   const titleLength = text.length
   const tagLength = tag.length
-  const wrapperWidth = 500
-  const wrapperHeight = 800
+  const wrapperWidth = 452
+  const wrapperHeight = 720
   const fontRatio = 0.8 //tagのsizeがtitleのsizeの何倍か
   const lineHeight = 1.3
   const iconSpaceWidth = 40 //アイコンの分の横幅
