@@ -89,8 +89,7 @@ function getCss(theme: string, titleFontSize: number, tagFontSize: number) {
       padding-right: 100px;
       font-weight: 500;
       font-size: ${tagFontSize}px;
-    }
-    `
+    }`
 }
 
 export function getHtml(parsedReq: ParsedRequest) {
