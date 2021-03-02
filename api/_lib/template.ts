@@ -81,6 +81,7 @@ function getCss(theme: string, titleFontSize: number, tagFontSize: number) {
         color: ${foreground};
         line-height: 1.3;
         text-align: center;
+        word-break: break-all;
     }
     .title {
       font-weight: 700;
