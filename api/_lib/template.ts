@@ -98,8 +98,8 @@ export function getHtml(parsedReq: ParsedRequest) {
   } = parsedReq
 
   const theme = "light"
-  const titleLength = text[0].length
-  const tagLength = tag[0].length
+  const titleLength = text.length
+  const tagLength = tag.length
   const wrapperWidth = 500
   const wrapperHeight = 800
   const fontRatio = 0.8 //tagのsizeがtitleのsizeの何倍か
@@ -131,9 +131,9 @@ export function getHtml(parsedReq: ParsedRequest) {
       <div>
         <div class="container">
           <div class="wrapper">
-            <div class="heading title">${emojify(sanitizeHtml(text[0]))}</div>
+            <div class="heading title">${emojify(sanitizeHtml(text))}</div>
 
-            <div class="heading tag">${emojify(sanitizeHtml(tag[0]))}</div>
+            <div class="heading tag">${emojify(sanitizeHtml(tag))}</div>
           </div>
           <img
             class="icon"
