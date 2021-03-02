@@ -1,4 +1,3 @@
-import { readFileSync } from 'fs'
 
 import { sanitizeHtml } from './sanitizer'
 import { ParsedRequest } from './types'
@@ -134,9 +133,9 @@ export function getHtml(parsedReq: ParsedRequest) {
       <div>
         <div class="container">
           <div class="wrapper">
-            <div class="heading title">${sanitizeHtml(title[0])}</div>
+            <div class="heading title">${emojify(sanitizeHtml(title[0]))}</div>
 
-            <div class="heading tag">${sanitizeHtml(tag[0])}</div>
+            <div class="heading tag">${emojify(sanitizeHtml(tag[0]))}</div>
           </div>
           <img
             class="icon"
