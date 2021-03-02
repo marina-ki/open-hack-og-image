@@ -10,7 +10,6 @@ const emojify = (text: string) => twemoji.parse(text, twOptions)
 function getCss(theme: string, titleFontSize: number, tagFontSize: number) {
   let background = 'white'
   let foreground = 'white'
-
   if (theme === 'dark') {
     background = 'black'
     foreground = 'white'
