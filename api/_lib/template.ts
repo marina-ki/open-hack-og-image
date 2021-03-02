@@ -10,7 +10,6 @@ function getCss(theme: string, titleFontSize: number, tagFontSize: number) {
   let backgroundImage = 'linear-gradient(315deg, #f9c5d1 0%, #9795ef 74%)'
   if (theme === 'dark') {
     backgroundImage = 'linear-gradient(315deg, #9CCFEB 0%, #9795ef 74%)'
-    
   }
   return `
     @import url('https://fonts.googleapis.com/css?family=M+PLUS+1p');
@@ -21,24 +20,6 @@ function getCss(theme: string, titleFontSize: number, tagFontSize: number) {
         align-items: center;
         justify-content: center;
         background-image: ${backgroundImage};
-    }
-    code {
-        color: #D400FF;
-        font-family: 'Vera', 'M PLUS 1p';
-        white-space: pre-wrap;
-        letter-spacing: -5px;
-    }
-    code:before, code:after {
-        content: '\`';
-    }
-    .spacer {
-        margin: 75px;
-    }
-    .emoji {
-        height: 1em;
-        width: 1em;
-        margin: 0 .05em 0 .1em;
-        vertical-align: -0.1em;
     }
     .container {
       border: 4px white solid;
@@ -92,11 +73,11 @@ function getCss(theme: string, titleFontSize: number, tagFontSize: number) {
 
 export function getHtml(parsedReq: ParsedRequest) {
   const {
+    theme,
     text,
     tag,
   } = parsedReq
 
-  const theme = "light"
   const titleLength = text.length
   const tagLength = tag.length
   const wrapperWidth = 452
