@@ -194,7 +194,7 @@ const App = (_: any, state: AppState, setState: SetState) => {
                     })
                 }),
                 H(Field, {
-                    label: 'アイコン',
+                    label: 'アイコン(src)',
                     input: H(TextInput, {
                         value: src,
                         oninput: (val: string) => {
