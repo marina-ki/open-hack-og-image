@@ -149,11 +149,14 @@ const App = (_: any, state: AppState, setState: SetState) => {
         messageToast = '',
         loading = true,
         overrideUrl = null,
+        src = "https://images.microcms-assets.io/protected/ap-northeast-1:7b46820b-9e1b-4aab-ba38-e994b4176f3c/service/marina/media/nyan.jpg"
     } = state;
     const url = new URL(window.location.origin);
     url.pathname = `${encodeURIComponent(text)}.${fileType}`;
     url.searchParams.append('theme', theme);
     url.searchParams.append('tag', encodeURIComponent(tag));
+    url.searchParams.append('src', encodeURIComponent(src));
+
 
     return H('div',
         { className: 'split' },
@@ -187,6 +190,16 @@ const App = (_: any, state: AppState, setState: SetState) => {
                         oninput: (val: string) => {
                             console.log('oninput ' + val);
                             setLoadingState({ tag: val, overrideUrl: url });
+                        }
+                    })
+                }),
+                H(Field, {
+                    label: 'アイコン',
+                    input: H(TextInput, {
+                        value: tag,
+                        oninput: (val: string) => {
+                            console.log('oninput ' + val);
+                            setLoadingState({ src: val, overrideUrl: url });
                         }
                     })
                 }),

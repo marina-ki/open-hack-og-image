@@ -5,7 +5,7 @@ import { ParsedRequest } from './types'
 export function parseRequest(req: IncomingMessage) {
   console.log('HTTP ' + req.url)
   const { pathname, query } = parse(req.url || '/', true)
-  const { fontSize, theme, md, title, tag } = query || {}
+  const { fontSize, theme, md, title, tag, src } = query || {}
 
   if (Array.isArray(fontSize)) {
     throw new Error('Expected a single fontSize')
@@ -14,6 +14,9 @@ export function parseRequest(req: IncomingMessage) {
     throw new Error('Expected a single theme')
   }
   if (Array.isArray(tag)) {
+    throw new Error('Expected a single tag')
+  }
+  if (Array.isArray(src)) {
     throw new Error('Expected a single tag')
   }
 
@@ -38,6 +41,7 @@ export function parseRequest(req: IncomingMessage) {
     theme: theme === 'dark' ? 'dark' : 'light',
     md: md === '1' || md === 'true',
     fontSize: fontSize || '60px',
+    src: decodeURIComponent(src),
   }
   return parsedRequest
 }

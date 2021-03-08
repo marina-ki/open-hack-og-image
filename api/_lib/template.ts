@@ -76,6 +76,7 @@ export function getHtml(parsedReq: ParsedRequest) {
     theme,
     text,
     tag,
+    src,
   } = parsedReq
 
   const titleLength = text.length
@@ -119,7 +120,7 @@ export function getHtml(parsedReq: ParsedRequest) {
           </div>
           <img
             class="icon"
-            src="https://images.microcms-assets.io/protected/ap-northeast-1:7b46820b-9e1b-4aab-ba38-e994b4176f3c/service/marina/media/nyan.jpg"
+            src=${src}
             width="110px"
           />
         </div>
