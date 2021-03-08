@@ -39,7 +39,7 @@ function getCss(theme: string, titleFontSize: number, tagFontSize: number) {
     }
     .wrapper {
       margin: 24px 40px;
-      height: 452px;
+      height: 400px;
       width: 720px;
       display: flex;
       align-items: center;
@@ -81,7 +81,7 @@ export function getHtml(parsedReq: ParsedRequest) {
 
   const titleLength = text.length
   const tagLength = tag.length
-  const wrapperWidth = 452
+  const wrapperWidth = 400
   const wrapperHeight = 720
   const fontRatio = 0.8 //tagのsizeがtitleのsizeの何倍か
   const lineHeight = 1.3
