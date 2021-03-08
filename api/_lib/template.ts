@@ -31,7 +31,7 @@ function getCss(theme: string, titleFontSize: number, tagFontSize: number) {
       margin-left: 66px;
       font-weight: bold;
       width:800px;
-      height: 450px;
+      height: 430px;
       position: relative;
       align-items: center;
       justify-content: center;
@@ -39,7 +39,7 @@ function getCss(theme: string, titleFontSize: number, tagFontSize: number) {
     }
     .wrapper {
       margin: 24px 40px;
-      height: 402px;
+      height: 382px;
       width: 720px;
       display: flex;
       align-items: center;
@@ -82,7 +82,7 @@ export function getHtml(parsedReq: ParsedRequest) {
   const titleLength = text.length
   const tagLength = tag.length
   const wrapperWidth = 720
-  const wrapperHeight = 402
+  const wrapperHeight = 382
   const fontRatio = 0.8 //tagのsizeがtitleのsizeの何倍か
   const lineHeight = 1.3
   const iconSpaceWidth = 40 //アイコンの分の横幅
