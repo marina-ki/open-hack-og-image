@@ -196,7 +196,7 @@ const App = (_: any, state: AppState, setState: SetState) => {
                 H(Field, {
                     label: 'アイコン',
                     input: H(TextInput, {
-                        value: tag,
+                        value: src,
                         oninput: (val: string) => {
                             console.log('oninput ' + val);
                             setLoadingState({ src: val, overrideUrl: url });
